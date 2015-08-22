@@ -12995,3 +12995,371 @@ Processing by UsersController#show as */*
   Rendered users/show.html.erb (3.7ms)
 Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 1.2ms)
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2015-08-23 01:16:26 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (1.6ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/4" for ::1 at 2015-08-23 01:16:28 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (2.2ms)
+Completed 200 OK in 27ms (Views: 5.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users" for ::1 at 2015-08-23 01:16:30 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb (4.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:16:33 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (1.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Tommy/Desktop/Hackathon/hack101/app/views/users/new.html.erb:20: dynamic constant assignment
+'.freeze; N_dist = (sanc_la - self_la) * 111267.47 
+                  ^
+/Users/Tommy/Desktop/Hackathon/hack101/app/views/users/new.html.erb:21: dynamic constant assignment
+ E_dist = (sanc_lo - sanc_lo) * 110892.76 
+         ^):
+  app/views/users/new.html.erb:20: dynamic constant assignment
+  app/views/users/new.html.erb:21: dynamic constant assignment
+
+
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.7ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.7ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (129.8ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:17:35 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (3.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Tommy/Desktop/Hackathon/hack101/app/views/users/new.html.erb:20: dynamic constant assignment
+'.freeze; N_dist = (sanc_la - self_la) * 111267.47 
+                  ^
+/Users/Tommy/Desktop/Hackathon/hack101/app/views/users/new.html.erb:21: dynamic constant assignment
+ E_dist = (sanc_lo - sanc_lo) * 110892.76 
+         ^):
+  app/views/users/new.html.erb:20: dynamic constant assignment
+  app/views/users/new.html.erb:21: dynamic constant assignment
+
+
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.0ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.0ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (119.2ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:19:08 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Tommy/Desktop/Hackathon/hack101/app/views/users/new.html.erb:20: dynamic constant assignment
+'.freeze; E_dist = (sanc_lo - sanc_lo) * 110892.76 
+                  ^):
+  app/views/users/new.html.erb:20: dynamic constant assignment
+
+
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.9ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (110.6ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:19:25 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (259.5ms)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::N_dist):
+    20: 
+    21: <% p.distance = Math.sqrt(((sanc_la - self_la) * 111267.47*(sanc_la - self_la) * 111267.47 + (sanc_lo - sanc_lo) * 110892.76*(sanc_lo - sanc_lo) * 110892.76)) %>
+    22: 
+    23: <% arc  = (Math.atan2(N_dist, E_dist))*57.32484 %>
+    24: <% if arc < -135 %>
+    25: 	p.direction = 7
+    26: <% elsif arc < -90 %>
+  app/views/users/new.html.erb:23:in `_app_views_users_new_html_erb__1276965273923521483_70353069751680'
+
+
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (63.1ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Tommy/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (108.7ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:19:41 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (37.7ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/tests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/resps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/usrs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-23 01:19:41 +0800
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:20:24 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (39.5ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/tests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/user.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/resps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/usrs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-23 01:20:24 +0800
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=23.90&self_longitude=123.40" for ::1 at 2015-08-23 01:21:03 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"23.90", "self_longitude"=>"123.40"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "23.9"], ["self_longitude", "123.4"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "124535.67072762"], ["direction", 3], ["created_at", "2015-08-22 17:21:03.711309"], ["updated_at", "2015-08-22 17:21:03.711309"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  Rendered users/new.html.erb (61.0ms)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/new" for ::1 at 2015-08-23 01:21:10 +0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb (29.3ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:21:10 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb (3.0ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:21:10 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (5.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=25.019074&self_longitude=121.536593" for ::1 at 2015-08-23 01:22:41 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"25.019074", "self_longitude"=>"121.536593"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "25.019074"], ["self_longitude", "121.536593"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "19.13800484"], ["direction", 3], ["created_at", "2015-08-22 17:22:41.998264"], ["updated_at", "2015-08-22 17:22:41.998264"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered users/new.html.erb (62.1ms)
+Completed 200 OK in 81ms (Views: 79.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:22:47 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (3.6ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=25.021533&self_longitude=121.535387" for ::1 at 2015-08-23 01:23:54 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"25.021533", "self_longitude"=>"121.535387"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "25.021533"], ["self_longitude", "121.535387"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "254.46870389"], ["direction", 3], ["created_at", "2015-08-22 17:23:54.837946"], ["updated_at", "2015-08-22 17:23:54.837946"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered users/new.html.erb (79.6ms)
+Completed 200 OK in 99ms (Views: 97.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:23:58 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (7.2ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:28:57 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb (3.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=25.021533&self_longitude=121.535387" for ::1 at 2015-08-23 01:29:01 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"25.021533", "self_longitude"=>"121.535387"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "25.021533"], ["self_longitude", "121.535387"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "803.0"], ["direction", 4], ["created_at", "2015-08-22 17:29:01.805753"], ["updated_at", "2015-08-22 17:29:01.805753"]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  Rendered users/new.html.erb (80.8ms)
+Completed 200 OK in 101ms (Views: 98.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:29:03 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb (4.7ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:29:40 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (4.3ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=25.021533&self_longitude=121.535387" for ::1 at 2015-08-23 01:29:46 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"25.021533", "self_longitude"=>"121.535387"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "25.021533"], ["self_longitude", "121.535387"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "803.0"], ["direction", 4], ["created_at", "2015-08-22 17:29:46.478781"], ["updated_at", "2015-08-22 17:29:46.478781"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered users/new.html.erb (55.2ms)
+Completed 200 OK in 81ms (Views: 79.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:29:49 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (4.4ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=25.021533&self_longitude=121.535387" for ::1 at 2015-08-23 01:30:54 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"25.021533", "self_longitude"=>"121.535387"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "25.021533"], ["self_longitude", "121.535387"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "803.0"], ["direction", -44], ["created_at", "2015-08-22 17:30:54.137749"], ["updated_at", "2015-08-22 17:30:54.137749"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  Rendered users/new.html.erb (71.1ms)
+Completed 200 OK in 90ms (Views: 88.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:30:55 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Kitty&heartbeat=70&self_latitude=25.021533&self_longitude=121.535387" for ::1 at 2015-08-23 01:31:20 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Kitty", "heartbeat"=>"70", "self_latitude"=>"25.021533", "self_longitude"=>"121.535387"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "distance", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Kitty"], ["heartbeat", 70], ["self_latitude", "25.021533"], ["self_longitude", "121.535387"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["distance", "803.0"], ["direction", -108], ["created_at", "2015-08-22 17:31:20.985934"], ["updated_at", "2015-08-22 17:31:20.985934"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered users/new.html.erb (54.0ms)
+Completed 200 OK in 73ms (Views: 71.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/" for ::1 at 2015-08-23 01:31:22 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (19.3ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.4ms)

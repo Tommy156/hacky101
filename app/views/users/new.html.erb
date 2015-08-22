@@ -12,13 +12,17 @@
 <% p.sanc_latitude  = 25.019246 %>
 <% p.sanc_longitude = 121.542264 %>
 
-<% self_la = p.self_latitude  %>
-<% self_lo = p.self_longitude %>
+<% self_la = p.self_latitude.to_f  %>
+<% self_lo = p.self_longitude.to_f %>
 <% sanc_la = p.sanc_latitude  %>
 <% sanc_lo = p.sanc_longitude %>
 
 
-<% p.direction  = 1 %>
+<% p.distance = Math.sqrt(((sanc_la - self_la) * 111267.47*(sanc_la - self_la) * 111267.47 + (sanc_lo - self_lo) * 110892.76*(sanc_lo - self_lo) * 110892.76)).to_i %>
+
+<% arc  = (Math.atan2((sanc_la - self_la), (sanc_lo - self_lo)))*57.32484 %>
+<% p.direction = arc - 90 %>
+
 <% if !p.name.nil? %>
   <% p.save! %>
 <% end %>
