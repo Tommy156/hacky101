@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mac: MyString
+  name: MyString
+  heart_beat: 1
+  self_latitude: 9.99
+  self_longitude: 9.99
+  sanc_latitude: 9.99
+  sanc_longitude: 9.99
+  t.integer: MyString
+  : 
+
+two:
+  mac: MyString
+  name: MyString
+  heart_beat: 1
+  self_latitude: 9.99
+  self_longitude: 9.99
+  sanc_latitude: 9.99
+  sanc_longitude: 9.99
+  t.integer: MyString
+  : 

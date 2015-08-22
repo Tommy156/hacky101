@@ -1,0 +1,11 @@
+<% mac = params[:mac] %>
+
+<% User.all.distinct.reverse.each do |u| %>
+	<% if (mac == u.mac) %>
+		<% if (params[:latitude] == "1") %>
+	  		<%= u.sanc_latitude %>
+		<% else %>
+			<%= u.sanc_longitude %> 	
+		<% end %>	
+	<% end %>
+<% end %>

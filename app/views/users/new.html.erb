@@ -1,0 +1,25 @@
+<%= javascript_include_tag "application" %>
+<h1>New User</h1>
+<% if true %>
+<% p = @user %>
+<% p.mac        = params[:mac]%>
+<% p.name       = params[:name]%>
+<% p.heartbeat = params[:heartbeat] %>
+<% p.self_latitude  = params[:self_latitude]   %>
+<% p.self_longitude = params[:self_longitude] %>
+
+
+<% p.sanc_latitude  = 25.019246 %>
+<% p.sanc_longitude = 121.542264 %>
+
+<% self_la = p.self_latitude  %>
+<% self_lo = p.self_longitude %>
+<% sanc_la = p.sanc_latitude  %>
+<% sanc_lo = p.sanc_longitude %>
+
+
+<% p.direction  = 1 %>
+<% if !p.name.nil? %>
+  <% p.save! %>
+<% end %>
+<% end %>

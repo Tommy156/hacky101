@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resp.name %>
+</p>
+
+<p>
+  <strong>Heart beat:</strong>
+  <%= @resp.heart_beat %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @resp.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @resp.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_resp_path(@resp) %> |
+<%= link_to 'Back', resps_path %>

@@ -1,0 +1,11 @@
+<%= javascript_include_tag "application" %>
+<% if true %>
+<% p = @post %>
+<% p.name       = params[:name]%>
+<% p.heart_beat = params[:heart_beat] %>
+<% p.latitude   = params[:latitude]   %>
+<% p.longtitude = params[:longtitude] %>
+<% if !p.name.nil? %>
+  <% p.save! %>
+<% end %>
+<% end %>
