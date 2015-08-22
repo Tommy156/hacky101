@@ -21,7 +21,7 @@
 <% p.distance = Math.sqrt(((sanc_la - self_la) * 111267.47*(sanc_la - self_la) * 111267.47 + (sanc_lo - self_lo) * 110892.76*(sanc_lo - self_lo) * 110892.76)).to_i %>
 
 <% arc  = (Math.atan2((sanc_la - self_la), (sanc_lo - self_lo)))*57.32484 %>
-<% p.direction = arc - 90 %>
+<% p.direction = -(arc - 90) %>
 
 <% if !p.name.nil? %>
   <% p.save! %>
