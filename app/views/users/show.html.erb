@@ -4,8 +4,10 @@
 	<% if (mac == u.mac) %>
 		<% if (params[:latitude] == "1") %>
 	  		<%= u.sanc_latitude %>
+	  		<% break %>
 		<% else %>
 			<%= u.sanc_longitude %> 	
+			<% break %>
 		<% end %>	
 	<% end %>
 <% end %>

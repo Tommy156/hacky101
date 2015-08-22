@@ -12811,3 +12811,187 @@ Processing by UsersController#index as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
   Rendered users/index.html.erb (1.6ms)
 Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-08-22 20:38:21 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-22 20:38:22 +0800
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-22 20:38:22 +0800
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-22 23:26:56 +0800
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-22 23:48:55 +0800
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-22 23:48:57 +0800
+Processing by ApplicationController#index as HTML
+  Rendered application/index.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-08-22 23:48:57 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (1.4ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-08-22 23:48:58 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb (2.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-08-22 23:49:04 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT DISTINCT "users".* FROM "users"
+  Rendered users/show.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92" for 127.0.0.1 at 2015-08-22 23:49:08 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT DISTINCT "users".* FROM "users"
+  Rendered users/show.html.erb (1.9ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Shawn&heartbeat=100&self_latitude=23.90&self_longitude=123.40" for ::1 at 2015-08-22 23:49:31 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Shawn", "heartbeat"=>"100", "self_latitude"=>"23.90", "self_longitude"=>"123.40"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["mac", "6c:40:08:9a:06:92"], ["name", "Shawn"], ["heartbeat", 100], ["self_latitude", "23.9"], ["self_longitude", "123.4"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["direction", 1], ["created_at", "2015-08-22 15:49:31.658556"], ["updated_at", "2015-08-22 15:49:31.658556"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  Rendered users/new.html.erb (79.9ms)
+Completed 200 OK in 100ms (Views: 97.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Shawn&heartbeat=100&self_latitude=23.90&self_longitude=123.40" for ::1 at 2015-08-22 23:49:34 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Shawn", "heartbeat"=>"100", "self_latitude"=>"23.90", "self_longitude"=>"123.40"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Shawn"], ["heartbeat", 100], ["self_latitude", "23.9"], ["self_longitude", "123.4"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["direction", 1], ["created_at", "2015-08-22 15:49:34.173738"], ["updated_at", "2015-08-22 15:49:34.173738"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered users/new.html.erb (62.1ms)
+Completed 200 OK in 80ms (Views: 78.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Shawn&heartbeat=100&self_latitude=23.90&self_longitude=123.40" for ::1 at 2015-08-22 23:49:34 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Shawn", "heartbeat"=>"100", "self_latitude"=>"23.90", "self_longitude"=>"123.40"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["mac", "6c:40:08:9a:06:92"], ["name", "Shawn"], ["heartbeat", 100], ["self_latitude", "23.9"], ["self_longitude", "123.4"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["direction", 1], ["created_at", "2015-08-22 15:49:34.354194"], ["updated_at", "2015-08-22 15:49:34.354194"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  Rendered users/new.html.erb (47.5ms)
+Completed 200 OK in 67ms (Views: 65.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new?mac=6c:40:08:9a:06:92&name=Shawn&heartbeat=100&self_latitude=23.90&self_longitude=123.40" for ::1 at 2015-08-22 23:49:34 +0800
+Processing by UsersController#new as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "name"=>"Shawn", "heartbeat"=>"100", "self_latitude"=>"23.90", "self_longitude"=>"123.40"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("mac", "name", "heartbeat", "self_latitude", "self_longitude", "sanc_latitude", "sanc_longitude", "direction", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["mac", "6c:40:08:9a:06:92"], ["name", "Shawn"], ["heartbeat", 100], ["self_latitude", "23.9"], ["self_longitude", "123.4"], ["sanc_latitude", "25.019246"], ["sanc_longitude", "121.542264"], ["direction", 1], ["created_at", "2015-08-22 15:49:34.574625"], ["updated_at", "2015-08-22 15:49:34.574625"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered users/new.html.erb (49.6ms)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-08-22 23:49:36 +0800
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb (3.3ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2015-08-22 23:49:40 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92" for 127.0.0.1 at 2015-08-22 23:49:41 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92" for 127.0.0.1 at 2015-08-22 23:49:46 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92" for 127.0.0.1 at 2015-08-22 23:49:48 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92" for 127.0.0.1 at 2015-08-22 23:49:49 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "id"=>"4"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92&latitude=1&longitude=0" for ::1 at 2015-08-22 23:50:27 +0800
+Processing by UsersController#show as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "latitude"=>"1", "longitude"=>"0", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (3.3ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4?mac=6c:40:08:9a:06:92&latitude=1&longitude=0" for ::1 at 2015-08-22 23:50:46 +0800
+Processing by UsersController#show as */*
+  Parameters: {"mac"=>"6c:40:08:9a:06:92", "latitude"=>"1", "longitude"=>"0", "id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT DISTINCT "users".* FROM "users"[0m
+  Rendered users/show.html.erb (3.7ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
